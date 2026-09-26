@@ -68,6 +68,20 @@ The project includes accessibility improvements such as:
 - Descriptive alternative text for images
 - Keyboard-accessible skip link to the main content
 
+## Running Locally
+
+No external dependencies or installation process are required.
+
+To run the project locally:
+
+1. Clone or download the repository.
+2. Open the project folder in Visual Studio Code.
+3. Open `html/index.html`.
+4. Run the page using the Live Server extension or another local HTTP server.
+5. Access the local address provided by the server in the browser.
+
+A local HTTP server is recommended because the application uses JavaScript ES modules.
+
 ## Version Control
 
 The project uses Git with a workflow based on GitFlow:
