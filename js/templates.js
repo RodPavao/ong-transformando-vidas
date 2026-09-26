@@ -3,6 +3,13 @@
 // Centraliza as visÃµes dinÃ¢micas utilizadas pela SPA
 // =========================================================
 
+// =========================================================
+// 1.a IMPORTAÇÃO DOS RECURSOS VISUAIS
+// Permite que o Vite inclua a imagem no build de produção
+// =========================================================
+
+import imagemColaboracao from "../html/assets/images-5-1.webp";
+
 export const paginas = {
 
     inicio: `
@@ -15,8 +22,9 @@ export const paginas = {
             </p>
 
             <img
-                src="/ong-transformando-vidas/imagens/images-5-1.webp"
-                alt="Pessoas unindo as mÃ£os em gesto de colaboraÃ§Ã£o">
+    src="${imagemColaboracao}"
+    alt="Pessoas unindo as mãos em gesto de colaboração">
+    
         </section>
 
         <section>
@@ -133,3 +141,4 @@ export const paginas = {
         </form>
     `
 };
+
