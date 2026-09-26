@@ -1,0 +1,457 @@
+/* ==================================================
+   1. DESIGN SYSTEM — VARIÁVEIS DE CORES
+   ================================================== */
+
+:root {
+    --cor-primaria: #1d4ed8;
+    --cor-primaria-escura: #1e3a8a;
+    --cor-secundaria: #0f766e;
+    --cor-destaque: #f59e0b;
+
+    --cor-fundo: #f8fafc;
+    --cor-superficie: #ffffff;
+    --cor-texto: #1e293b;
+    --cor-texto-suave: #64748b;
+
+        /* ==================================================
+       2. DESIGN SYSTEM — ESCALA TIPOGRÁFICA
+       ================================================== */
+
+    --fonte-xs: 0.875rem;
+    --fonte-sm: 1rem;
+    --fonte-md: 1.25rem;
+    --fonte-lg: 1.75rem;
+    --fonte-xl: 2.5rem;
+
+        /* ==================================================
+       3. DESIGN SYSTEM — ESCALA DE ESPAÇAMENTOS
+       ================================================== */
+
+    --espaco-xs: 0.5rem;
+    --espaco-sm: 1rem;
+    --espaco-md: 1.5rem;
+    --espaco-lg: 2rem;
+    --espaco-xl: 3rem;
+}
+
+/* ==================================================
+   4. ESTILOS GLOBAIS DA PÁGINA
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: var(--fonte-sm);
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: var(--fonte-xl);
+}
+
+h2 {
+    font-size: var(--fonte-lg);
+}
+
+h3 {
+    font-size: var(--fonte-md);
+}
+
+p {
+    margin-bottom: var(--espaco-sm);
+}
+
+/* ==================================================
+   5. CABEÇALHO E NAVEGAÇÃO
+   ================================================== */
+
+header {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-superficie);
+    padding: var(--espaco-lg);
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: var(--espaco-md);
+    padding: var(--espaco-sm) var(--espaco-lg);
+    background-color: var(--cor-primaria);
+}
+
+nav a {
+    color: var(--cor-superficie);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* ==================================================
+   6. CONTEÚDO PRINCIPAL E IMAGENS
+   ================================================== */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espaco-lg);
+}
+
+section {
+    margin-bottom: var(--espaco-xl);
+}
+
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: var(--espaco-lg);
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-superficie);
+    text-align: center;
+}
+
+/* ==================================================
+   7. LAYOUT RESPONSIVO COM CSS GRID
+   ================================================== */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-lg);
+}
+
+main section {
+    grid-column: span 12;
+}
+
+/* Em telas maiores, as seções podem ocupar
+   diferentes áreas da grade de 12 colunas. */
+@media (min-width: 768px) {
+    main section {
+        grid-column: span 12;
+    }
+}
+
+/* ==================================================
+   8. CARDS DE PROJETOS — GRID RESPONSIVO
+   ================================================== */
+
+article {
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-lg);
+    border-radius: 0.75rem;
+    height: 100%;
+}
+
+article h3 {
+    color: var(--cor-primaria-escura);
+    margin-top: 0;
+}
+
+/* Desktop e tablets maiores */
+@media (min-width: 768px) {
+    .projetos-grid section {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 767px) {
+    .projetos-grid section {
+        grid-column: span 12;
+    }
+}
+
+/* ==================================================
+   9. FORMULÁRIO — CAMPOS, GRUPOS E BOTÃO
+   ================================================== */
+
+form {
+    grid-column: span 12;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-sm);
+
+    margin-bottom: var(--espaco-lg);
+    padding: var(--espaco-lg);
+
+    background-color: var(--cor-superficie);
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+}
+
+legend {
+    padding: 0 var(--espaco-sm);
+    font-size: var(--fonte-md);
+    font-weight: bold;
+    color: var(--cor-primaria-escura);
+}
+
+label {
+    font-weight: bold;
+    margin-top: var(--espaco-sm);
+}
+
+input {
+    width: 100%;
+    padding: var(--espaco-sm);
+
+    font: inherit;
+    color: var(--cor-texto);
+
+    background-color: var(--cor-superficie);
+    border: 1px solid #9ca3af;
+    border-radius: 0.5rem;
+}
+
+input:focus {
+    outline: 3px solid var(--cor-destaque);
+    border-color: var(--cor-primaria);
+}
+
+button {
+    padding: var(--espaco-sm) var(--espaco-lg);
+
+    font: inherit;
+    font-weight: bold;
+    color: var(--cor-superficie);
+
+    background-color: var(--cor-primaria);
+    border: none;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cor-primaria-escura);
+}
+
+/* =====================================================
+   10. BREAKPOINTS RESPONSIVOS
+   ===================================================== */
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    main {
+        padding: var(--espaco-sm);
+    }
+}
+
+/* Celulares maiores */
+@media (min-width: 481px) and (max-width: 767px) {
+    main {
+        padding: var(--espaco-md);
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    main {
+        padding: var(--espaco-lg);
+    }
+}
+
+/* Notebooks e desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    main {
+        max-width: 1100px;
+    }
+}
+
+/* Desktops grandes */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+    }
+}
+
+/* ============================================================
+   11. MENU RESPONSIVO — DROPDOWN E HAMBÚRGUER
+   ============================================================ */
+
+/* Links principais do menu */
+.menu-links {
+    display: flex;
+    gap: var(--espaco-md);
+    align-items: center;
+}
+
+/* Contêiner do item que possui submenu */
+.menu-dropdown {
+    position: relative;
+}
+
+/* Submenu oculto no estado inicial */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    padding: var(--espaco-sm);
+    background-color: var(--cor-primaria-escura);
+}
+
+/* Links internos do submenu */
+.submenu a {
+    display: block;
+    padding: var(--espaco-xs);
+}
+
+/* Exibe o submenu pelo mouse ou pelo foco */
+.menu-dropdown:hover .submenu,
+.menu-dropdown:focus-within .submenu {
+    display: block;
+}
+
+/* Botão hambúrguer oculto em telas maiores */
+.menu-hamburguer {
+    display: none;
+}
+
+/* Menu para celulares */
+@media (max-width: 767px) {
+
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-links.menu-aberto {
+    display: flex;
+}
+
+    .submenu {
+        position: static;
+    }
+}
+
+/* ============================================================
+   12. ESTADOS INTERATIVOS E VALIDAÇÃO VISUAL
+   ============================================================ */
+
+/* Botão com foco pelo teclado */
+button:focus {
+    outline: 3px solid var(--cor-destaque);
+}
+
+/* Botão durante o clique */
+button:active {
+    opacity: 0.8;
+}
+
+/* Botão desabilitado */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Campo preenchido corretamente */
+input:valid {
+    border-color: var(--cor-secundaria);
+}
+
+/* Campo preenchido de forma inválida */
+input:invalid {
+    border-color: var(--cor-destaque);
+}
+
+/* Estados de validação visual dos campos */
+input:not(:placeholder-shown):valid {
+    border: 2px solid #198754;
+}
+
+input:not(:placeholder-shown):invalid {
+    border: 2px solid #dc3545;
+}
+
+/* ============================================================
+   13. COMPONENTES DE FEEDBACK — BADGES, ALERTAS E TOAST
+   ============================================================ */
+
+/* Badge de categorização */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    margin-right: var(--espaco-sm);
+    margin-bottom: var(--espaco-sm);
+
+    background-color: var(--cor-secundaria);
+    color: var(--cor-superficie);
+
+    font-size: var(--fonte-xs);
+    font-weight: bold;
+
+    border-radius: 1rem;
+}
+
+/* Área demonstrativa dos componentes de feedback */
+.feedback-demo {
+    grid-column: span 12;
+}
+
+/* ============================================================
+   BASE VISUAL DOS COMPONENTES DE FEEDBACK
+   ============================================================ */
+
+.feedback {
+    padding: var(--espaco-sm) var(--espaco-md);
+    margin-bottom: var(--espaco-sm);
+
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+
+    border: 2px solid;
+    border-radius: 0.5rem;
+
+    font-weight: bold;
+}
+
+/* Feedback de sucesso */
+.feedback-sucesso {
+    border-color: #198754;
+    color: #198754;
+}
+
+/* Feedback de erro */
+.feedback-erro {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+/* Feedback de alerta */
+.feedback-alerta {
+    border-color: var(--cor-destaque);
+    color: #92400e;
+}
