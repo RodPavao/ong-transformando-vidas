@@ -475,3 +475,66 @@ input:not(:placeholder-shown):invalid {
 .skip-link:focus {
     top: 10px;
 }
+
+/* =========================================================
+   12. MODO DE ALTO CONTRASTE
+   Melhora a legibilidade e a percepção dos elementos
+   interativos para usuários com baixa visão
+   ========================================================= */
+
+.botao-contraste {
+    padding: 8px 14px;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* 12.1 - Paleta de alto contraste */
+body.alto-contraste {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.alto-contraste header,
+body.alto-contraste nav,
+body.alto-contraste main,
+body.alto-contraste section,
+body.alto-contraste article,
+body.alto-contraste footer,
+body.alto-contraste form,
+body.alto-contraste fieldset {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.alto-contraste a {
+    color: #ffff00;
+}
+
+body.alto-contraste button {
+    background-color: #000000;
+    color: #ffff00;
+    border-color: #ffff00;
+}
+
+body.alto-contraste input {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+body.alto-contraste .badge {
+    background-color: #ffff00;
+    color: #000000;
+}
+
+/* 12.2 - Foco de teclado reforçado */
+body.alto-contraste a:focus-visible,
+body.alto-contraste button:focus-visible,
+body.alto-contraste input:focus-visible {
+    outline: 3px solid #00ffff;
+    outline-offset: 3px;
+}

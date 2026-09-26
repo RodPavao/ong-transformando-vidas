@@ -76,3 +76,27 @@ botaoMenu.addEventListener("click", function () {
 // =========================================================
 
 iniciarFormulario(conteudo);
+
+// =========================================================
+// 5. CONTROLE DO MODO DE ALTO CONTRASTE
+// Ativa ou desativa a paleta de alto contraste e informa
+// o estado do recurso às tecnologias assistivas
+// =========================================================
+
+const botaoContraste = document.querySelector(".botao-contraste");
+
+botaoContraste.addEventListener("click", function () {
+    const contrasteAtivo =
+        document.body.classList.toggle("alto-contraste");
+
+    botaoContraste.setAttribute(
+        "aria-pressed",
+        contrasteAtivo
+    );
+
+    if (contrasteAtivo) {
+        botaoContraste.textContent = "Contraste normal";
+    } else {
+        botaoContraste.textContent = "Alto contraste";
+    }
+});
