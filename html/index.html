@@ -3,86 +3,200 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Plataforma digital da ONG Transformando Vidas para divulgação de projetos sociais, doações e voluntariado.">
+
     <title>ONG - Transformando Vidas</title>
+
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
     <!-- =========================================================
-     ACESSIBILIDADE
-     Permite pular diretamente para o conteúdo principal
-========================================================= -->
-<a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+         1. ACESSIBILIDADE
+         Permite pular diretamente para o conteúdo principal
+         ========================================================= -->
+
+    <a class="skip-link" href="#conteudo">
+        Pular para o conteúdo principal
+    </a>
+
 
     <!-- =========================================================
-         1. CABEÇALHO DA APLICAÇÃO
-         Apresenta o nome e a mensagem principal da ONG
+         2. CABEÇALHO DA APLICAÇÃO
+         Identidade visual, navegação e controles de acessibilidade
          ========================================================= -->
-    <header>
-        <h1>ONG - Transformando Vidas</h1>
-        <p>Juntos podemos fazer a diferença</p>
-    </header>
 
-    <!-- =========================================================
-         2. MENU DE NAVEGAÇÃO DA SPA
-         Utiliza rotas com hash sem carregar outra página HTML
-         ========================================================= -->
-    <nav class="menu-principal">
+    <header class="site-header">
 
-    <button
-        class="menu-hamburguer"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false">
-        ☰
-    </button>
+        <div class="header-container">
 
-    <div class="menu-links">
-        <a href="#inicio">Início</a>
+            <a
+                class="brand"
+                href="#inicio"
+                aria-label="ONG Transformando Vidas - Página inicial">
 
-        <div class="menu-dropdown">
-            <a href="#projetos">Projetos Sociais</a>
+                <span class="brand-mark" aria-hidden="true">
+                    TV
+                </span>
 
-            <div class="submenu">
-                <a href="#projetos">Doações</a>
-                <a href="#projetos">Voluntariado</a>
-            </div>
+                <span class="brand-text">
+                    <strong>Transformando Vidas</strong>
+                    <small>Juntos podemos fazer a diferença</small>
+                </span>
+
+            </a>
+
+
+            <!-- =================================================
+                 3. MENU DE NAVEGAÇÃO
+                 Navegação principal da aplicação
+                 ================================================= -->
+
+            <nav
+                class="menu-principal"
+                aria-label="Navegação principal">
+
+                <button
+                    class="menu-hamburguer"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="menu-links">
+
+                    <span aria-hidden="true">☰</span>
+
+                </button>
+
+
+                <div
+                    class="menu-links"
+                    id="menu-links">
+
+                    <a href="#inicio">
+                        Início
+                    </a>
+
+                    <div class="menu-dropdown">
+
+                        <a href="#projetos">
+                            Projetos Sociais
+                        </a>
+
+                        <div class="submenu">
+
+                            <a href="#projetos">
+                                Doações
+                            </a>
+
+                            <a href="#projetos">
+                                Voluntariado
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <a href="#cadastro">
+                        Cadastro
+                    </a>
+
+
+                    <!-- =========================================
+                         4. CONTROLE DE ALTO CONTRASTE
+                         Mantém acessibilidade sem poluir a interface
+                         ========================================= -->
+
+                    <button
+                        class="botao-contraste"
+                        type="button"
+                        aria-label="Ativar alto contraste"
+                        aria-pressed="false"
+                        title="Alternar alto contraste">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false">
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="8">
+                            </circle>
+
+                            <path
+                                d="M12 4a8 8 0 0 1 0 16z">
+                            </path>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </nav>
+
         </div>
 
-        <a href="#cadastro">Cadastro</a>
+    </header>
 
-        <button
-            class="botao-contraste"
-            type="button"
-            aria-pressed="false">
-            Alto contraste
-        </button>
-    </div>
-
-</nav>
 
     <!-- =========================================================
-         3. ÁREA DE CONTEÚDO DINÂMICO
+         5. CONTEÚDO DINÂMICO
          O JavaScript renderiza aqui a rota selecionada
          ========================================================= -->
-    <main id="conteudo">
+
+    <main
+        id="conteudo"
+        class="app-main"
+        tabindex="-1">
     </main>
 
-    <!-- =========================================================
-         4. RODAPÉ DA APLICAÇÃO
-         Permanece visível independentemente da rota selecionada
-         ========================================================= -->
-    <footer>
-        <p>&copy; 2026 ONG - Transformando Vidas</p>
-    </footer>
 
     <!-- =========================================================
-         5. JAVASCRIPT PRINCIPAL
-         Controla menu, rotas e renderização dinâmica
+         6. RODAPÉ
+         Informações institucionais
          ========================================================= -->
-    <script type="module" src="../js/main.js"></script>
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div>
+                <strong>ONG - Transformando Vidas</strong>
+
+                <p>
+                    Tecnologia e colaboração conectando pessoas
+                    a iniciativas sociais.
+                </p>
+            </div>
+
+            <p class="copyright">
+                © 2026 ONG - Transformando Vidas
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         7. JAVASCRIPT PRINCIPAL
+         Inicializa rotas, menu e recursos da aplicação
+         ========================================================= -->
+
+    <script
+        type="module"
+        src="../js/main.js">
+    </script>
 
 </body>
 
