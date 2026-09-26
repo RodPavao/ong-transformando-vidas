@@ -169,28 +169,38 @@ input:focus-visible {
 }
 
 .brand-mark {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
 
-    display: grid;
-    place-items: center;
+    flex-shrink: 0;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--cor-primaria),
-            var(--cor-secundaria)
-        );
+    overflow: hidden;
 
-    color: #ffffff;
+    background: var(--cor-superficie);
 
+    border: 1px solid var(--cor-borda);
     border-radius: 14px;
 
-    font-weight: 800;
-    letter-spacing: -1px;
-
     box-shadow:
-        0 8px 20px rgba(15, 76, 129, 0.22);
+        0 8px 20px rgba(15, 76, 129, 0.16);
+}
+
+
+/* =========================================================
+   4.1 IMAGEM DA IDENTIDADE VISUAL
+   Exibe uma miniatura da imagem principal da ONG
+   ========================================================= */
+
+.brand-mark img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: inherit;
 }
 
 .brand-text {
@@ -956,75 +966,216 @@ input:focus-visible {
 
 /* =========================================================
    12. MODO DE ALTO CONTRASTE
-   Perfil visual de acessibilidade
+   Perfil escuro com contraste elevado e identidade visual
+   mais confortável
    ========================================================= */
 
 body.alto-contraste {
-    --cor-fundo: #000000;
-    --cor-superficie: #000000;
-    --cor-superficie-secundaria: #141414;
+    --cor-fundo: #15181d;
+    --cor-superficie: #1d2229;
+    --cor-superficie-secundaria: #262c34;
 
-    --cor-primaria: #ffff00;
-    --cor-primaria-forte: #ffff00;
-    --cor-secundaria: #ffff00;
+    --cor-primaria: #d6b15e;
+    --cor-primaria-forte: #f5f7fa;
+    --cor-secundaria: #b99143;
 
-    --cor-destaque: #00ffff;
-    --cor-destaque-suave: #000000;
+    --cor-destaque: #85c7a1;
+    --cor-destaque-suave: #243229;
 
-    --cor-texto: #ffffff;
-    --cor-texto-suave: #ffffff;
+    --cor-texto: #f5f7fa;
+    --cor-texto-suave: #c8ced6;
 
-    --cor-borda: #ffffff;
+    --cor-borda: #414852;
 
-    background: #000000;
+    --cor-sucesso: #9dd9b2;
+    --cor-erro: #ffb4ab;
+    --cor-alerta: #e8c980;
+
+    --sombra-suave:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+
+    --sombra-card:
+        0 18px 45px rgba(0, 0, 0, 0.35);
+
+    background: #15181d;
+    color: var(--cor-texto);
 }
 
-body.alto-contraste .site-header,
-body.alto-contraste .hero,
+
+/* =========================================================
+   12.1 SUPERFÍCIES DO MODO DE ALTO CONTRASTE
+   ========================================================= */
+
+body.alto-contraste .site-header {
+    background: rgba(21, 24, 29, 0.94);
+    border-bottom-color: var(--cor-borda);
+}
+
+body.alto-contraste .hero {
+    background:
+        linear-gradient(
+            135deg,
+            #1b2026,
+            #20262d 58%,
+            #1d2823
+        );
+
+    border-color: var(--cor-borda);
+}
+
 body.alto-contraste .card,
 body.alto-contraste .projeto-card,
 body.alto-contraste .cadastro-form,
-body.alto-contraste .feedback-demo {
-    background: #000000;
+body.alto-contraste .feedback-demo,
+body.alto-contraste .submenu,
+body.alto-contraste .menu-links.menu-aberto {
+    background: var(--cor-superficie);
 
-    border-color: #ffffff;
+    border-color: var(--cor-borda);
 
-    box-shadow: none;
+    box-shadow: var(--sombra-suave);
 }
 
-body.alto-contraste .hero-imagem-legenda,
-body.alto-contraste .site-footer {
-    background: #000000;
 
-    border: 1px solid #ffffff;
+/* =========================================================
+   12.2 IDENTIDADE VISUAL E NAVEGAÇÃO
+   ========================================================= */
+
+body.alto-contraste .brand-mark {
+    background: var(--cor-superficie-secundaria);
+
+    border-color: #59616c;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.3);
 }
+
+body.alto-contraste .menu-links > a:hover,
+body.alto-contraste .menu-dropdown > a:hover,
+body.alto-contraste .menu-links > a:focus-visible,
+body.alto-contraste .menu-dropdown > a:focus-visible {
+    background: var(--cor-superficie-secundaria);
+    color: var(--cor-primaria);
+}
+
+body.alto-contraste .botao-contraste {
+    background: var(--cor-superficie-secundaria);
+    color: var(--cor-primaria);
+
+    border-color: #59616c;
+}
+
+
+/* =========================================================
+   12.3 BOTÕES
+   ========================================================= */
 
 body.alto-contraste .botao-primario {
-    background: #ffff00;
-    color: #000000;
+    background:
+        linear-gradient(
+            135deg,
+            #d6b15e,
+            #bd9849
+        );
+
+    color: #17191d;
+
+    border-color: #d6b15e;
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.3);
 }
 
 body.alto-contraste .botao-secundario {
-    background: #000000;
-    color: #ffff00;
+    background: var(--cor-superficie);
 
-    border-color: #ffff00;
+    color: #e4c675;
+
+    border-color: #8d7745;
 }
+
+
+/* =========================================================
+   12.4 IMAGEM E LEGENDA
+   ========================================================= */
+
+body.alto-contraste .hero-imagem img {
+    filter:
+        brightness(0.88)
+        contrast(1.08);
+}
+
+body.alto-contraste .hero-imagem-legenda {
+    background:
+        rgba(22, 25, 30, 0.92);
+
+    color: #f5f7fa;
+
+    border-color: #59616c;
+}
+
+
+/* =========================================================
+   12.5 FORMULÁRIO
+   ========================================================= */
 
 body.alto-contraste .campo input {
-    background: #000000;
-    color: #ffffff;
+    background: #20252c;
 
-    border-color: #ffffff;
+    color: var(--cor-texto);
+
+    border-color: #59616c;
 }
 
-body.alto-contraste .feedback-sucesso,
-body.alto-contraste .feedback-erro,
-body.alto-contraste .feedback-alerta {
-    background: #000000;
-    color: #ffffff;
+body.alto-contraste .campo input:focus {
+    border-color: var(--cor-primaria);
 
-    border: 1px solid #ffffff;
+    box-shadow:
+        0 0 0 4px rgba(214, 177, 94, 0.18);
+}
+
+
+/* =========================================================
+   12.6 FEEDBACKS
+   Mantém diferença visual entre sucesso, erro e alerta
+   ========================================================= */
+
+body.alto-contraste .feedback-sucesso {
+    background: #203129;
+    color: #b7e7c7;
+
+    border: 1px solid #456a54;
+}
+
+body.alto-contraste .feedback-erro {
+    background: #352322;
+    color: #ffc1bb;
+
+    border: 1px solid #784b47;
+}
+
+body.alto-contraste .feedback-alerta {
+    background: #332d20;
+    color: #f1d897;
+
+    border: 1px solid #74643d;
+}
+
+
+/* =========================================================
+   12.7 RODAPÉ
+   ========================================================= */
+
+body.alto-contraste .site-footer {
+    background: #111419;
+
+    color: var(--cor-texto);
+
+    border-top: 1px solid var(--cor-borda);
+}
+
+body.alto-contraste .footer-container p {
+    color: var(--cor-texto-suave);
 }
 
 

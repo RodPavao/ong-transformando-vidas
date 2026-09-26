@@ -1,10 +1,5 @@
 ﻿// =========================================================
 // 1. RECURSOS VISUAIS
-// Importa a imagem para que o Vite a inclua no build
-// =========================================================
-
-// =========================================================
-// 1.a RECURSO VISUAL DA PÁGINA INICIAL
 // Resolve a imagem tanto no desenvolvimento quanto no build
 // =========================================================
 
@@ -87,14 +82,18 @@ export const paginas = {
 
                 <img
                     src="${imagemColaboracao}"
-                    alt="Pessoas unindo as mãos em gesto de colaboração">
+                    alt="Pessoas unindo as mãos em gesto de colaboração"
+                    width="678"
+                    height="452">
 
                 <div class="hero-imagem-legenda">
+
                     <span>Impacto coletivo</span>
 
                     <strong>
                         Juntos podemos fazer a diferença.
                     </strong>
+
                 </div>
 
             </div>
@@ -284,6 +283,11 @@ export const paginas = {
                 <h2>
                     Feedback claro durante a utilização.
                 </h2>
+
+                <p>
+                    Mensagens objetivas ajudam o usuário a compreender
+                    rapidamente o resultado de cada ação realizada.
+                </p>
 
             </div>
 
