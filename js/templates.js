@@ -1,6 +1,6 @@
-// =========================================================
+﻿// =========================================================
 // 1. TEMPLATES DAS ROTAS
-// Centraliza as visões dinâmicas utilizadas pela SPA
+// Centraliza as visÃµes dinÃ¢micas utilizadas pela SPA
 // =========================================================
 
 export const paginas = {
@@ -15,32 +15,32 @@ export const paginas = {
             </p>
 
             <img
-                src="../imagens/images-5-1.webp"
-                alt="Pessoas unindo as mãos em gesto de colaboração">
+                src="/ong-transformando-vidas/imagens/images-5-1.webp"
+                alt="Pessoas unindo as mÃ£os em gesto de colaboraÃ§Ã£o">
         </section>
 
         <section>
             <h2>Como ajudar</h2>
 
             <p>
-                Você pode contribuir por meio de doações ou
-                participando de nossos projetos como voluntário.
+                VocÃª pode contribuir por meio de doaÃ§Ãµes ou
+                participando de nossos projetos como voluntÃ¡rio.
             </p>
         </section>
     `,
 
     projetos: `
         <section>
-            <h2>Doações</h2>
+            <h2>DoaÃ§Ãµes</h2>
 
             <article>
                 <h3>
-                    <span class="badge">Doação</span>
+                    <span class="badge">DoaÃ§Ã£o</span>
                     Contribua com nossos projetos
                 </h3>
 
                 <p>
-                    As doações ajudam a manter e ampliar as ações
+                    As doaÃ§Ãµes ajudam a manter e ampliar as aÃ§Ãµes
                     sociais desenvolvidas pela ONG.
                 </p>
             </article>
@@ -52,11 +52,11 @@ export const paginas = {
             <article>
                 <h3>
                     <span class="badge">Voluntariado</span>
-                    Participe como voluntário
+                    Participe como voluntÃ¡rio
                 </h3>
 
                 <p>
-                    Você pode contribuir com seu tempo e suas habilidades
+                    VocÃª pode contribuir com seu tempo e suas habilidades
                     participando das atividades e projetos da ONG.
                 </p>
             </article>
@@ -66,16 +66,16 @@ export const paginas = {
             <h2>Feedback da plataforma</h2>
 
             <div class="feedback feedback-sucesso" role="status">
-                ✓ Cadastro de interesse realizado com sucesso.
+                âœ“ Cadastro de interesse realizado com sucesso.
             </div>
 
             <div class="feedback feedback-erro" role="alert">
-                ✕ Não foi possível concluir o cadastro.
+                âœ• NÃ£o foi possÃ­vel concluir o cadastro.
                 Verifique os dados informados.
             </div>
 
             <div class="feedback feedback-alerta" role="alert">
-                ⚠ Existem campos que precisam ser revisados antes do envio.
+                âš  Existem campos que precisam ser revisados antes do envio.
             </div>
         </section>
     `,
@@ -106,7 +106,7 @@ export const paginas = {
             </fieldset>
 
             <fieldset>
-                <legend>Endereço</legend>
+                <legend>EndereÃ§o</legend>
 
                 <label for="cep">CEP:</label>
                 <input type="text" id="cep" name="cep"
@@ -116,7 +116,7 @@ export const paginas = {
                 <label for="rua">Rua:</label>
                 <input type="text" id="rua" name="rua" required>
 
-                <label for="numero">Número:</label>
+                <label for="numero">NÃºmero:</label>
                 <input type="text" id="numero" name="numero" required>
 
                 <label for="bairro">Bairro:</label>
