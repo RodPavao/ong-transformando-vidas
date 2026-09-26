@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG - Transformando Vidas</title>
+  <script type="module" crossorigin src="/assets/index-C43hYgsf.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DUr0EAHf.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+     ACESSIBILIDADE
+     Permite pular diretamente para o conteúdo principal
+========================================================= -->
+<a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+    <!-- =========================================================
+         1. CABEÇALHO DA APLICAÇÃO
+         Apresenta o nome e a mensagem principal da ONG
+         ========================================================= -->
+    <header>
+        <h1>ONG - Transformando Vidas</h1>
+        <p>Juntos podemos fazer a diferença</p>
+    </header>
+
+    <!-- =========================================================
+         2. MENU DE NAVEGAÇÃO DA SPA
+         Utiliza rotas com hash sem carregar outra página HTML
+         ========================================================= -->
+    <nav class="menu-principal">
+
+    <button
+        class="menu-hamburguer"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="menu-links">
+        <a href="#inicio">Início</a>
+
+        <div class="menu-dropdown">
+            <a href="#projetos">Projetos Sociais</a>
+
+            <div class="submenu">
+                <a href="#projetos">Doações</a>
+                <a href="#projetos">Voluntariado</a>
+            </div>
+        </div>
+
+        <a href="#cadastro">Cadastro</a>
+
+        <button
+            class="botao-contraste"
+            type="button"
+            aria-pressed="false">
+            Alto contraste
+        </button>
+    </div>
+
+</nav>
+
+    <!-- =========================================================
+         3. ÁREA DE CONTEÚDO DINÂMICO
+         O JavaScript renderiza aqui a rota selecionada
+         ========================================================= -->
+    <main id="conteudo">
+    </main>
+
+    <!-- =========================================================
+         4. RODAPÉ DA APLICAÇÃO
+         Permanece visível independentemente da rota selecionada
+         ========================================================= -->
+    <footer>
+        <p>&copy; 2026 ONG - Transformando Vidas</p>
+    </footer>
+
+    <!-- =========================================================
+         5. JAVASCRIPT PRINCIPAL
+         Controla menu, rotas e renderização dinâmica
+         ========================================================= -->
+
+</body>
+
+</html>
