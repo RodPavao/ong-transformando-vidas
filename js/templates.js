@@ -15,7 +15,7 @@ export const paginas = {
             </p>
 
             <img
-                src="../imagens/images-5-1.jpg"
+                src="../imagens/images-5-1.webp"
                 alt="Pessoas unindo as mãos em gesto de colaboração">
         </section>
 
