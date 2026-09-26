@@ -8,8 +8,9 @@
             </p>
 
             <img
-                src="/ong-transformando-vidas/imagens/images-5-1.webp"
-                alt="Pessoas unindo as mÃ£os em gesto de colaboraÃ§Ã£o">
+    src="/ong-transformando-vidas/assets/images-5-1-DsIPxYUg.webp"
+    alt="Pessoas unindo as mãos em gesto de colaboração">
+    
         </section>
 
         <section>
