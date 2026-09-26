@@ -455,3 +455,23 @@ input:not(:placeholder-shown):invalid {
     border-color: var(--cor-destaque);
     color: #92400e;
 }
+
+/* =========================================================
+   ACESSIBILIDADE
+   Mantém o link de salto oculto e o exibe ao receber foco
+========================================================= */
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 20px;
+    padding: 10px 16px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
