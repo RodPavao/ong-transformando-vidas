@@ -1,0 +1,91 @@
+# ============================================================
+# 1. NOME DO WORKFLOW
+# Identifica a automação na aba Actions do GitHub
+# ============================================================
+
+name: Deploy to GitHub Pages
+
+
+# ============================================================
+# 2. GATILHOS
+# Executa automaticamente quando há push na branch main
+# Também permite execução manual pela aba Actions
+# ============================================================
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+
+# ============================================================
+# 3. PERMISSÕES
+# Autoriza o workflow a publicar no GitHub Pages
+# ============================================================
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+
+# ============================================================
+# 4. CONTROLE DE CONCORRÊNCIA
+# Evita dois deploys simultâneos da mesma aplicação
+# ============================================================
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+
+# ============================================================
+# 5. BUILD E DEPLOY
+# Instala dependências, gera a pasta dist e publica no Pages
+# ============================================================
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Baixa o código do repositório para o ambiente do GitHub Actions
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      # Instala o Node.js utilizado para executar Vite e npm
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          cache: npm
+
+      # Instala exatamente as dependências registradas no package-lock.json
+      - name: Install dependencies
+        run: npm ci
+
+      # Executa o script "build" definido no package.json
+      - name: Build application
+        run: npm run build
+
+      # Prepara o ambiente do GitHub Pages
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v6
+
+      # Envia a pasta gerada pelo Vite como artefato de publicação
+      - name: Upload production files
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./dist
+
+      # Publica o artefato no GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
