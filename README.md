@@ -109,6 +109,32 @@ This approach was selected because hash routing does not require additional serv
 
 For this reason, hash-based routing is compatible with the static hosting model used by GitHub Pages while still allowing the application to provide SPA-style navigation without reloading the entire page.
 
+## Screenshots
+
+### Published Application
+
+The application is publicly available through GitHub Pages.
+
+#### Default Interface
+
+![ONG Transformando Vidas - Published application](imagens/screenshots/home-light.png)
+
+#### High-Contrast Mode
+
+![ONG Transformando Vidas - High-contrast mode](imagens/screenshots/home-high-contrast.png)
+
+### Automated Deployment
+
+The production deployment is automated with GitHub Actions. Every push or merged change to the `main` branch triggers the workflow responsible for installing dependencies, building the application with Vite, uploading the production artifact, and publishing it to GitHub Pages.
+
+#### GitHub Actions Deployment Workflow
+
+![GitHub Actions - Successful automated deployment](imagens/screenshots/github-actions-deploy.png)
+
+#### GitHub Pages Configuration
+
+![GitHub Pages - GitHub Actions deployment source](imagens/screenshots/github-pages-settings.png)
+
 ## Version Control
 
 The project uses Git with a workflow based on GitFlow:
