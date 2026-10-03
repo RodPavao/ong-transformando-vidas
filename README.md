@@ -79,6 +79,40 @@ The project includes accessibility improvements such as:
 
 These decisions treat accessibility as part of the application architecture rather than as a final visual adjustment.
 
+### Contrast Validation
+
+Color contrast was objectively verified using the WebAIM Contrast Checker according to WCAG criteria.
+
+The following foreground and background color combinations were tested:
+
+- Main text: `#F5F7FA` on `#15181D` — contrast ratio `16.57:1`
+- Links and controls: `#D6B15E` on `#15181D` — contrast ratio `8.73:1`
+- High-contrast badge: `#15181D` on `#D6B15E` — contrast ratio `8.73:1`
+- Focus indicator: `#85C7A1` on `#15181D` — contrast ratio `9.04:1`
+
+The results confirm that the tested combinations meet the applicable WCAG contrast requirements.
+
+Visual evidence of the validation is stored in:
+
+`imagens/screenshots/contrast-validation-webaim.png`
+
+### Contrast Validation
+
+Color contrast was objectively verified using the WebAIM Contrast Checker according to WCAG criteria.
+
+The following foreground and background color combinations were tested:
+
+- Main text: `#F5F7FA` on `#15181D` — contrast ratio `16.57:1`
+- Links and controls: `#D6B15E` on `#15181D` — contrast ratio `8.73:1`
+- High-contrast badge: `#15181D` on `#D6B15E` — contrast ratio `8.73:1`
+- Focus indicator: `#85C7A1` on `#15181D` — contrast ratio `9.04:1`
+
+All tested combinations meet the applicable WCAG contrast requirements.
+
+The image below documents one representative validation performed with the tool:
+
+![WebAIM Contrast Checker - Contrast validation](imagens/screenshots/contrast-validation-webaim.png)
+
 ## Running Locally
 
 The application can be executed locally without requiring a production build.
